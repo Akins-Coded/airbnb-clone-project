@@ -12,12 +12,23 @@ The Airbnb Clone Project is a web application designed to mimic the core functio
 - Provide a clean, intuitive user interface with responsive design.
 - Ensure secure handling of user data and transactions.
 
-## Tech Stack
-- **Backend:** Python, Django  
-- **Frontend:** Django Templates, HTML5, CSS, JavaScript  
-- **Database:** SQLite (default for development, can be switched to MYSQL)  
-- **Authentication:** Django's built-in authentication system  and/or JWT djangorestframework-simplejwt
-- **Other Tools:** Django ORM, Django Forms 
+
+## Technology Stack
+
+- **Python**: The primary programming language used to build the backend of the application, chosen for its simplicity and powerful libraries.
+
+- **Django**: A high-level Python web framework that enables rapid development and clean, pragmatic design. It handles URL routing, database interaction, templating, and user authentication for the project.
+
+- **Django REST Framework (DRF)**: A powerful and flexible toolkit for building Web APIs in Django. It facilitates creating RESTful endpoints to support frontend-backend communication.
+
+- **djangorestframework-simplejwt**: A JSON Web Token (JWT) authentication plugin for Django REST Framework. It provides secure, stateless authentication for the API, managing user tokens for login sessions.
+
+- **SQLite**: The default lightweight relational database used during development for storing user data, property listings, and bookings. Can be replaced with more robust databases like PostgreSQL for production.
+
+- **HTML & CSS**: Markup and styling languages used to create the structure and design of the frontend pages.
+
+- **JavaScript**: Adds interactivity and dynamic behavior to the frontend components, enhancing user experience.
+
 
 ## Getting Started
 
