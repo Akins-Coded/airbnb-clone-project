@@ -187,3 +187,37 @@ Although the payment system in this project is a basic mock, integration with a 
 ---
 
 Together, these measures form a robust security layer that helps protect the system from common vulnerabilities and ensure a trustworthy platform for users and hosts.
+
+## 🔁 CI/CD Pipeline
+
+### What is CI/CD?
+
+**CI/CD (Continuous Integration and Continuous Deployment)** is a development practice that automates the process of integrating code changes, running tests, and deploying applications. It ensures that every code update is automatically built, tested, and, if successful, deployed to a staging or production environment without manual intervention.
+
+- **Continuous Integration (CI)** helps developers merge code changes frequently with automated tests that ensure the codebase remains stable.
+- **Continuous Deployment (CD)** automatically releases validated code changes to users, ensuring faster and more reliable feature delivery.
+
+---
+
+### Why It Matters for This Project
+
+For a dynamic platform like the **Airbnb Clone**, where features such as property listings, bookings, reviews, and payments must work together reliably, CI/CD offers several advantages:
+
+- 🧪 **Automated Testing**: Ensures new changes don’t break existing functionality.
+- 🚀 **Rapid Deployment**: Speeds up release cycles, enabling quicker updates and bug fixes.
+- 🔁 **Consistency**: Reduces discrepancies across development, staging, and production environments.
+- ✅ **Reliability**: Minimizes human errors during manual testing and deployment.
+- 📈 **Scalability**: Supports future growth by streamlining collaboration and delivery.
+
+---
+
+### Recommended Tools
+
+- **GitHub Actions**: Automate workflows to test, build, and deploy code on every push or pull request.
+- **Docker**: Containerizes the application for consistent environment management across development and production.
+- **Docker Compose**: Orchestrates multi-container setups (e.g., app + database).
+- **Vercel / Render / AWS / DigitalOcean**: Cloud platforms to host and automatically deploy the application from GitHub.
+- **Pytest + Coverage**: Run unit tests and check test coverage.
+- **Black / Flake8 / isort**: Maintain code formatting and linting standards.
+
+> With CI/CD, every change is tested and delivered reliably, ensuring the platform remains stable, secure, and scalable over time.
