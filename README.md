@@ -129,3 +129,23 @@ The project’s database is designed to capture essential data for managing user
 ---
 
 This structure ensures clarity and integrity of the data while supporting the core Airbnb clone functionalities.
+
+## Feature Breakdown
+
+### User Management
+This feature allows users to register, log in, and manage their profiles. It supports different user roles such as guests and hosts, enabling personalized experiences like managing property listings for hosts and booking stays for guests. Secure authentication ensures user data protection.
+
+### Property Management
+Hosts can create, update, and delete property listings through this feature. It includes detailed descriptions, pricing, and location information to help guests find suitable accommodations. The feature also supports managing availability to prevent double bookings.
+
+### Booking System
+The booking system enables guests to search for properties, select dates, and reserve stays. It manages booking statuses and ensures date availability, while calculating total costs. This feature is central to the platform’s purpose, facilitating smooth and reliable reservations.
+
+### Reviews and Ratings
+Guests can leave reviews and ratings for properties after their stay, providing valuable feedback for future users. This feature helps build trust within the community by promoting transparency and quality control.
+
+### Payment Processing
+This feature handles secure payment transactions associated with bookings. It tracks payment status and amounts, ensuring hosts receive payments and guests are charged correctly. Integration with secure payment gateways can be added to enhance this functionality.
+
+### Responsive User Interface
+The frontend delivers a clean, intuitive, and mobile-friendly experience. Using Django templates alongside HTML, CSS, and JavaScript, it ensures users can easily navigate the platform, search for listings, and complete bookings from any device.
