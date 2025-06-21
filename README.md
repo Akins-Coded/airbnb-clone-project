@@ -22,5 +22,5 @@ The Airbnb Clone Project is a web application designed to mimic the core functio
 ## Getting Started
 
 ### Prerequisites
-- Python 3.x installed
-- Django installed (`pip install django`)
+- Python 3.13 
+- Django 
