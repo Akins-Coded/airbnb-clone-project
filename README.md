@@ -180,7 +180,7 @@ All API traffic should be encrypted over HTTPS in production to prevent data int
 > **Why it matters:** Protects sensitive information such as login credentials and payment details from being intercepted over insecure networks.
 
 ### Secure Payment Handling
-Although the payment system in this project is a basic mock, integration with a secure third-party payment gateway (e.g., Stripe, PayPal) is recommended. These platforms handle sensitive financial data and offer built-in fraud protection.
+Although the payment system in this project is a basic mock, integration with a secure third-party payment gateway (e.g.flutterwave, Stripe, checkout, paystack, Remita, interswitch WebPAY, KORA) is recommended. These platforms handle sensitive financial data and offer built-in fraud protection.
 
 > **Why it matters:** Ensures users' payment data is handled securely and reduces liability for the platform.
 
