@@ -55,3 +55,77 @@ Ensures the application meets quality standards by designing and running tests, 
 
 ### Project Manager
 Oversees project planning, timelines, and team communication. They coordinate tasks, manage deadlines, and ensure the project aligns with the set goals. The Project Manager facilitates collaboration between developers, testers, and stakeholders to deliver the project successfully.
+
+## Database Design
+
+The project’s database is designed to capture essential data for managing users, properties, bookings, reviews, and payments. Below are the key entities, their important fields, and relationships:
+
+### Entities and Fields
+
+#### 1. Users
+- `id` (Primary Key): Unique identifier for each user.
+- `username`: User's unique login name.
+- `email`: Contact email address.
+- `password`: Hashed password for authentication.
+- `is_host`: Boolean indicating if the user is a host or guest.
+- `profile_photo`: Optional user profile image.
+
+#### 2. Properties
+- `id` (Primary Key): Unique identifier for each property listing.
+- `host_id` (Foreign Key to Users): The user who owns/listed the property.
+- `title`: Name or title of the property.
+- `description`: Detailed description of the property.
+- `location`: Address or geographical location.
+- `price_per_night`: Rental price per night.
+
+#### 3. Bookings
+- `id` (Primary Key): Unique booking identifier.
+- `property_id` (Foreign Key to Properties): The property being booked.
+- `guest_id` (Foreign Key to Users): The user who made the booking.
+- `start_date`: Booking start date.
+- `end_date`: Booking end date.
+- `total_price`: Calculated total price for the stay.
+
+#### 4. Reviews
+- `id` (Primary Key): Unique review identifier.
+- `booking_id` (Foreign Key to Bookings): The booking this review is associated with.
+- `reviewer_id` (Foreign Key to Users): The user who wrote the review.
+- `rating`: Numeric rating (e.g., 1-5 stars).
+- `comment`: Text feedback about the stay.
+
+#### 5. Payments
+- `id` (Primary Key): Unique payment identifier.
+- `booking_id` (Foreign Key to Bookings): The booking this payment covers.
+- `payment_date`: Date when the payment was made.
+- `amount`: Amount paid.
+- `payment_status`: Status of the payment (e.g., completed, pending).
+
+### Entity Relationships
+
+- **Users (1) --- (M) Properties**  
+  A user who is a host can own multiple properties.  
+  (Foreign Key: `Properties.host_id` → `Users.id`)
+
+- **Users (1) --- (M) Bookings**  
+  A user acting as a guest can make multiple bookings.  
+  (Foreign Key: `Bookings.guest_id` → `Users.id`)
+
+- **Properties (1) --- (M) Bookings**  
+  Each booking is for one property.  
+  (Foreign Key: `Bookings.property_id` → `Properties.id`)
+
+- **Bookings (1) --- (1) Reviews**  
+  Each booking can have one review, written by the guest who made the booking.  
+  (Foreign Key: `Reviews.booking_id` → `Bookings.id`)
+
+- **Bookings (1) --- (1) Payments**  
+  Each booking has one associated payment record.  
+  (Foreign Key: `Payments.booking_id` → `Bookings.id`)
+
+- **Users and Properties** do **NOT** have a many-to-many relationship in this model (hosts own properties exclusively).
+
+- There is no explicit many-to-many relationship currently defined. If features like user wishlists or property amenities were added, those would likely use M:N relationships.
+
+---
+
+This structure ensures clarity and integrity of the data while supporting the core Airbnb clone functionalities.
