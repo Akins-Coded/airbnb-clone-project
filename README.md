@@ -149,3 +149,41 @@ This feature handles secure payment transactions associated with bookings. It tr
 
 ### Responsive User Interface
 The frontend delivers a clean, intuitive, and mobile-friendly experience. Using Django templates alongside HTML, CSS, and JavaScript, it ensures users can easily navigate the platform, search for listings, and complete bookings from any device.
+
+## API Security
+
+Ensuring the security of the Airbnb Clone's API is critical to protect user data, maintain trust, and prevent unauthorized access. Below are the key security measures implemented in the project, along with their importance:
+
+### Authentication
+We use **JWT (JSON Web Tokens)** provided by `djangorestframework-simplejwt` to authenticate users securely. Tokens are issued upon login and must be included in subsequent requests to access protected endpoints. This ensures that only verified users can access or manipulate their data.
+
+> **Why it matters:** Prevents unauthorized users from accessing accounts or performing actions like creating bookings or editing listings.
+
+### Authorization
+Role-based access control (RBAC) is implemented to differentiate between guests and hosts. Hosts can create and manage properties, while guests can only book and review listings. Each API endpoint enforces permission checks to ensure appropriate access levels.
+
+> **Why it matters:** Ensures that users can only perform actions that match their roles, preventing misuse of the system.
+
+### Rate Limiting *(Optional / Future Implementation)*
+Rate limiting can be configured to limit the number of API requests a user can make in a given timeframe. This helps prevent abuse, brute-force attacks, and reduces server load.
+
+> **Why it matters:** Protects against denial-of-service (DoS) attacks and automated malicious activity.
+
+### Data Validation and Sanitization
+All incoming data is validated using Django REST Framework serializers to prevent injection attacks and data corruption. Fields like email, passwords, and dates are rigorously checked before saving.
+
+> **Why it matters:** Ensures data integrity and protects the database from malformed or malicious inputs.
+
+### HTTPS Enforcement *(Deployment Phase)*
+All API traffic should be encrypted over HTTPS in production to prevent data interception. This will be enforced at the server level using SSL/TLS certificates.
+
+> **Why it matters:** Protects sensitive information such as login credentials and payment details from being intercepted over insecure networks.
+
+### Secure Payment Handling
+Although the payment system in this project is a basic mock, integration with a secure third-party payment gateway (e.g., Stripe, PayPal) is recommended. These platforms handle sensitive financial data and offer built-in fraud protection.
+
+> **Why it matters:** Ensures users' payment data is handled securely and reduces liability for the platform.
+
+---
+
+Together, these measures form a robust security layer that helps protect the system from common vulnerabilities and ensure a trustworthy platform for users and hosts.
